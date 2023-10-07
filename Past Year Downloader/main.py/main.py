@@ -8,7 +8,7 @@ from urllib3.exceptions import InsecureRequestWarning
 # Suppress only the single warning from urllib3 needed.
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 cookies = {
-    "JSESSIONID": "2C4721306F73A3C27E0E07217D590584",
+    "JSESSIONID": "FD416B179C0BB5E7F02D5CA09B1144C8",
     "sysid": "a6c6287c-fb59-49a3-8615-46e38d0f26fc",
 }
 headers = {
@@ -62,7 +62,7 @@ def downloader(url):
             # Reformat the string
             filename = f"[{year}] {course_code} {month}{file_extension}"
             folder_path = Path(f"./Past Year/{course_code}")
-            # https://portal.utar.edu.my/stuIntranet/examination/pastPaper/downloadFile.jsp?text=78312.pdf&fname=UEMH4333_SEPTEMBER2022
+            # https://portal.utar.edu.my/stuIntranet/examination/pastPaper/downloadFile.jsp?text=78312.pdfz&fname=UEMH4333_SEPTEMBER2022
             # Check if the folder already exists, and create it if it doesn't
             if not folder_path.exists():
                 folder_path.mkdir()
