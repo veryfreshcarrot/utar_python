@@ -1,0 +1,654 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=en>
+<HEAD>
+<TITLE>myUTAR - The Universiti Tunku Abdul Rahman Web Portal</TITLE>
+
+<script language="javascript">
+function MM_openBrWindow(theURL,winName,features) { 
+  window.open(theURL,winName,features);
+}
+function mypopup(url, sbar, resize, width, height, top, left){
+	tit=''
+	reWin=window.open(url, tit, 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=' + sbar + ',resizable=' + resize + ',width=' + width + ',height=' + height + ',top=' + top + ',left=' + left) 
+}
+function checkPhone(evt){
+	evt = (evt) ? evt : window.event
+	var charCode = (evt.which) ? evt.which : evt.keyCode
+	
+	if ((charCode > 46 && charCode < 58) || charCode==45 || charCode==13){				
+		return true
+	}
+	else{
+		alert("You can only key in numeric number")
+		return false
+	}
+}
+function checkNumeric(evt){
+	evt = (evt) ? evt : window.event
+	var charCode = (evt.which) ? evt.which : evt.keyCode
+	
+	if((charCode > 47 && charCode < 58) || charCode==13){				
+		return true
+	}
+	else{
+		alert("You can only key in numeric number")
+		return false
+	}
+}
+function IsNumeric(strString)
+{
+   var strValidChars = "0123456789.-/";
+   var strChar;
+   var blnResult = true;
+
+   if (strString.length == 0) return false;
+   for (i = 0; i < strString.length && blnResult == true; i++)
+   {
+      strChar = strString.charAt(i);
+      if (strValidChars.indexOf(strChar) == -1)
+      {
+         blnResult = false;
+      }
+   }
+   return blnResult;
+}
+function logout(myPath,logoutURL){	
+	//alert(myPath+logoutURL)
+	if(confirm("Are you sure to log out?")){
+		window.location=myPath+logoutURL;
+	}else
+		return false;
+}
+function expireSession(){
+	alert("Session Expired !!!");
+	window.location="https://unitreg.utar.edu.my/portal/courseRegStu/logoutSurvey.jsp";
+}
+
+setTimeout('expireSession()',360000);
+</script>
+<link href="https://unitreg.utar.edu.my/portal/courseRegStu/skin/main.css" rel="stylesheet" type="text/css">
+<link href="https://unitreg.utar.edu.my/portal/courseRegStu/skin/print.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY> 
+<table cellSpacing=0 cellPadding=0 width=100% border=0 id="notDisplay"> 
+  <tbody> 
+    <tr class="utarbgcolor"> 
+      <td width="70"  class="utar_logo"> </td> 
+      <td width="693" valign="bottom" ><div class="topmenu">&nbsp;</div> 
+        <TABLE height=23 cellSpacing=0 cellPadding=0 border=0> 
+          <tbody> 
+            <tr class="utarbgcolor"> 
+               
+	  
+              <td class="tab_back_on"> <A class="tab-on" onMouseOver="window.status='Done'; return true;"  href="#" > <SPAN class="tab-on">Home</SPAN></A> </td> 
+              <td width=7 class="tab_right_on"></td> 
+              <TD width=7><IMG height=23 hspace=0 src="https://unitreg.utar.edu.my/portal/courseRegStu/images/tab_left_off.gif"  width=7 border=0><BR></TD> 
+			  <TD align=center noWrap align=middle background="https://unitreg.utar.edu.my/portal/courseRegStu/images/tab_back_off.gif" bgColor=#21455a>&nbsp;&nbsp; 
+			  <A class=tab-off href="#" onClick="logout('https://unitreg.utar.edu.my/portal/courseRegStu/','logoutBeforeSurvey.jsp');"> <SPAN class=tab-off>Log Out</SPAN></A>&nbsp;&nbsp;</TD> 
+              <TD width=7><IMG height=23 hspace=0 src="https://unitreg.utar.edu.my/portal/courseRegStu/images/tab_right_off.gif" width=7 border=0><BR></TD> 
+            </TR> 
+          </TBODY> 
+        </TABLE></TD> 
+    </TR> 
+    <TR> 
+      <TD colspan="2" noWrap class="menubgcolor">&nbsp; </TD> 
+    </TR> 
+  </TBODY> 
+</TABLE> 
+<table width="100%" height="530"  border="0" cellpadding="0" cellspacing="0"> 
+<tr>
+	<td>Welcome, SOH MIN XUAN (20UEB01461)
+	<!--<img src="../images/help_icon.gif" border="0" style="margin-left:5em "> <a href="../GD-ICTC-001.pdf" target="_blank">User Guide</a>-->
+	<img src="../images/help_icon.gif" border="0" style="margin-left:5em "> <a href="../MN-SODEMC-042V3.pdf" target="_blank">User Guide</a>
+	</td>
+</tr>
+<tr> 
+ 
+
+
+
+
+
+
+
+
+<td width="100%" valign="top">
+	<table width=100% height="520" border=0 cellPadding=0 cellSpacing=0>        			
+		<tr>
+			<td width="100%" valign="top">					
+				<table width="100%" border=0 align=center cellpadding=0 cellspacing="0"> 
+					<tr>
+						<td>
+<!--  Start Content -->
+<script language="javascript" type="text/javascript" src="../js/myPublicFunction.js"></script>
+<script language="javascript">
+	function onSelectLine(obj,subName,objColor){
+		obj.style.backgroundColor = objColor;
+		try{
+			var subObj = document.all(subName);
+			if(subObj!=null){
+				if(subObj.length==undefined){
+					subObj.style.backgroundColor = objColor;
+				}else{
+					for(var i = 0; i < subObj.length; i++){
+						subObj[i].style.backgroundColor = objColor;
+					}		
+				}
+			}	
+		}catch(e){}	
+	}
+
+	function onUnitCodeChange(){
+		
+		var unitcode = document.frmParam.reqUnit.value;
+		if(unitcode!=''){
+			document.frmParam.reqUnit.value = unitcode.toUpperCase(); 
+		}
+	}
+	function validate(){
+	
+		with(document.frmParam){
+			if(reqUnit.value==''){
+				alert("Please enter Unitcode");
+				return false;
+			}
+		}	
+	}
+	function onSubmitClick(){
+		if( document.frmSummary.reqWithClass.value=='Y'){
+			if(checkIsCheckBox(document.frmSummary.reqMid)){
+				document.frmSummary.Submit.disabled = true;
+				document.frmSummary.submit();
+			}
+		}else{
+			document.frmSummary.Submit.disabled = true;
+			document.frmSummary.submit();		
+		}	
+	}
+
+</script>
+
+
+
+
+
+
+<table width="100%" border=0 align=center cellpadding=0 cellspacing="0"> 
+	<tr>
+		<td class="dotted"><img src = "https://unitreg.utar.edu.my/portal/courseRegStu/images/clear.gif" height="1px" width="1px"></td>
+	</tr>								
+	<tr>
+		<td width="100%"><h2><img src="https://unitreg.utar.edu.my/portal/courseRegStu/images/link1.gif"> Register Course</h2></td>
+	</tr>
+	<tr>
+		<td class="dotted"><img src = "https://unitreg.utar.edu.my/portal/courseRegStu/images/clear.gif" height="1px" width="1px"></td>
+	</tr>								
+</table>
+<div>
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="normal">
+		<tr>
+			<td class="normalTbl-subheader">Session</td>
+			<td>202305</td>
+			
+			<td class="normalTbl-subheader">Class Type</td>
+			<td>Full-time</td>			
+			<td class="normalTbl-subheader">Faculty</td>
+			<td>LKC FES</td>			
+			
+			<td class="normalTbl-subheader">Campus</td>
+			<td>Sungai Long Campus</td>									
+		</tr>
+	</table>
+</div>
+<BR>
+<div><a href="studentRegistrationSurvey.jsp"> << Back</a></div>
+
+<div align="center">
+	<table id="tblGrid" width="50%" class="normal">
+		<tr align="left">
+			<td  class="normalTbl-subheader">ID</td>
+			<td colspan="3">20UEB01461</td>
+		</tr>		
+		<tr align="left">
+			<td class="normalTbl-subheader">Name</td>
+			<td>SOH MIN XUAN</td>
+			<td class="normalTbl-subheader">IC.</td>
+			<td >021220-14-0199</td>			
+		</tr>
+		<tr align="left">
+			<td  class="normalTbl-subheader">Degree Level</td>
+			<td>BACHELOR</td>
+			<td class="normalTbl-subheader" width="20%">Programme</td>
+			<td>MH</td>			
+		</tr>	
+		<tr align="left">
+			<td  class="normalTbl-subheader">Campus</td>
+			<td colspan="3">Sungai Long Campus</td>
+		</tr>			
+	</table>
+</div>
+
+<BR>
+<div align="center">	
+	<table id="tblGrid" width="50%" class="normal">			
+		<form name="frmParam" action="registerUnitSurvey.jsp" method="POST"  onSubmit="return validate()">
+		<input type="hidden" name="reqPaperType" value="M">
+		<input type="hidden" name="reqFregkey" value="2001461">
+		<tr>
+			<td  align="left" class="normalTbl-subheader" width="20%">Course</td>
+			<td align="left">
+				<div>
+					<input type="text" id="reqUnit" name="reqUnit" value="UEEA2634" maxlength="15" size="17" class="iform" onChange="onUnitCodeChange()">
+					<span id="ind_reqUnit" style="display:none;"><img src="../images/indicator.gif" /></span>
+					<span id="unitCodeDesc"></span>
+					MICROPROCESSOR AND MICROCONTROLLER SYSTEMS
+				</div>				
+			</td>
+		</tr>		
+		<tr>
+			<td  align="left" class="normalTbl-subheader">Paper Type</td>
+			<td align="left">
+				<b>Main</b>
+			</td>
+		</tr>			
+		<tr align="center">
+			<td colspan="2"><input name="Save" type="submit" value="View" class="button"></td>
+		</tr>
+		</form>
+	</table>					
+</div>	
+
+
+<BR><div align="center"><h2><font class="red">*</font> This course needs  1 Lecture,  1 Tutorial,  1 Practical </h2></div>
+<form name="frmSummary" action="registerUnitProSurvey.jsp" method="post">
+	<input type="hidden" name="reqUnit" value="UEEA2634">
+	<input type="hidden" id="reqSid" name="reqSid" value="17961">
+	<input type="hidden" id="reqSession" name="reqSession" value="202305">
+	<input type="hidden" name="reqFregkey" value="2001461">
+	<input type="hidden" name="reqPaperType" value="M">
+	<input type="hidden" name="reqWithClass" value="Y">
+	<input type="hidden" name="act" value="insert">
+	
+	
+	<div id="overviewSector">
+		<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="normal">
+			<tr align="center"> 
+				<td width="4%" class="normalTbl-subheader">No</td>
+				<td width="4%" class="normalTbl-subheader">Type</td>
+				<td width="5%" class="normalTbl-subheader">Group</td>
+				<td width="5%" class="normalTbl-subheader">Mode</td>
+				<td width="5%" class="normalTbl-subheader">Class Size</td>
+				<td width="10%" class="normalTbl-subheader">Week</td>
+				<td width="4%" class="normalTbl-subheader">Day</td>
+				<td width="14%" class="normalTbl-subheader">Time</td>
+				<td width="5%" class="normalTbl-subheader">Hour</td>
+				<td width="10%" class="normalTbl-subheader">Room</td>		
+				<td width="5%" class="normalTbl-subheader">Reg.</td>
+				<td width="5%" class="normalTbl-subheader">Avail</td>		
+				<td width="5%" class="normalTbl-subheader">Remark</td>				
+				<td width="5%" class="normalTbl-subheader"></td>
+			</tr>
+
+	<tr valign="middle"><td class="normalTbl-sub3header" colspan="14" height="15px">
+UEEA2634 - MICROPROCESSOR AND MICROCONTROLLER SYSTEMS</td></tr>				
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_614983','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_614983','#FFFFFF')">
+								<td rowspan="2">1</td>	
+								<td rowspan="2">L</td>
+								<td rowspan="2">1</td>
+								<td rowspan="2">Physical</td>
+								<td rowspan="2">120</td>
+						
+								<td rowspan="2">1-14</td>
+								<td>Mon</td>
+								<td>05:00 PM - 06:00 PM</td>
+								<td>1.0</td>
+								<td>KB209</td>
+								
+								
+								<td rowspan="2" align="center"><b>108</b></td>
+								<td rowspan="2" align="center"><b>12</b></td>	
+								<td rowspan="2" align="center"></td>		
+								<td rowspan="2" align="center">
+									
+									<input type="checkbox" name="reqMid" value="614983" >
+									
+								</td>
+								
+							</tr>			
+
+						<tr align="center" id="subRow_614983">
+							<td>Tue</td>
+							<td>12:00 PM - 02:00 PM</td>
+							<td>2.0</td>
+							<td>KB213</td>
+						</tr>
+						
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617292','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617292','#FFFFFF')">
+								<td rowspan="2">2</td>	
+								<td rowspan="2">P</td>
+								<td rowspan="2">1</td>
+								<td rowspan="2">Physical</td>
+								<td rowspan="2">30</td>
+						
+								<td rowspan="2">4,8</td>
+								<td>Wed</td>
+								<td>09:00 AM - 12:00 PM</td>
+								<td>3.0</td>
+								<td>KB602</td>
+								
+								
+								<td rowspan="2" align="center"><b>30</b></td>
+								<td rowspan="2" align="center"><b>0</b></td>	
+								<td rowspan="2" align="center"></td>		
+								<td rowspan="2" align="center">
+									
+								</td>
+								
+							</tr>			
+
+						<tr align="center" id="subRow_617292">
+							<td>Wed</td>
+							<td>09:00 AM - 12:00 PM</td>
+							<td>3.0</td>
+							<td>KB905</td>
+						</tr>
+						
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617293','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617293','#FFFFFF')">
+								<td rowspan="2">3</td>	
+								<td rowspan="2">P</td>
+								<td rowspan="2">2</td>
+								<td rowspan="2">Physical</td>
+								<td rowspan="2">30</td>
+						
+								<td rowspan="2">5,9</td>
+								<td>Wed</td>
+								<td>09:00 AM - 12:00 PM</td>
+								<td>3.0</td>
+								<td>KB602</td>
+								
+								
+								<td rowspan="2" align="center"><b>30</b></td>
+								<td rowspan="2" align="center"><b>0</b></td>	
+								<td rowspan="2" align="center"></td>		
+								<td rowspan="2" align="center">
+									
+								</td>
+								
+							</tr>			
+
+						<tr align="center" id="subRow_617293">
+							<td>Wed</td>
+							<td>09:00 AM - 12:00 PM</td>
+							<td>3.0</td>
+							<td>KB905</td>
+						</tr>
+						
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617294','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617294','#FFFFFF')">
+								<td rowspan="2">4</td>	
+								<td rowspan="2">P</td>
+								<td rowspan="2">3</td>
+								<td rowspan="2">Physical</td>
+								<td rowspan="2">30</td>
+						
+								<td rowspan="2">6,10</td>
+								<td>Wed</td>
+								<td>09:00 AM - 12:00 PM</td>
+								<td>3.0</td>
+								<td>KB602</td>
+								
+								
+								<td rowspan="2" align="center"><b>27</b></td>
+								<td rowspan="2" align="center"><b>3</b></td>	
+								<td rowspan="2" align="center"></td>		
+								<td rowspan="2" align="center">
+									
+									<input type="checkbox" name="reqMid" value="617294" >
+									
+								</td>
+								
+							</tr>			
+
+						<tr align="center" id="subRow_617294">
+							<td>Wed</td>
+							<td>09:00 AM - 12:00 PM</td>
+							<td>3.0</td>
+							<td>KB905</td>
+						</tr>
+						
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617295','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617295','#FFFFFF')">
+								<td rowspan="2">5</td>	
+								<td rowspan="2">P</td>
+								<td rowspan="2">4</td>
+								<td rowspan="2">Physical</td>
+								<td rowspan="2">30</td>
+						
+								<td rowspan="2">7,11</td>
+								<td>Wed</td>
+								<td>09:00 AM - 12:00 PM</td>
+								<td>3.0</td>
+								<td>KB602</td>
+								
+								
+								<td rowspan="2" align="center"><b>21</b></td>
+								<td rowspan="2" align="center"><b>9</b></td>	
+								<td rowspan="2" align="center"></td>		
+								<td rowspan="2" align="center">
+									
+									<input type="checkbox" name="reqMid" value="617295" >
+									
+								</td>
+								
+							</tr>			
+
+						<tr align="center" id="subRow_617295">
+							<td>Wed</td>
+							<td>09:00 AM - 12:00 PM</td>
+							<td>3.0</td>
+							<td>KB905</td>
+						</tr>
+						
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617287','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617287','#FFFFFF')">
+								<td >6</td>	
+								<td >T</td>
+								<td >1</td>
+								<td >Physical</td>
+								<td >30</td>
+						
+								<td >3,5,7,9,11</td>
+								<td>Tue</td>
+								<td>03:00 PM - 04:00 PM</td>
+								<td>1.0</td>
+								<td>KB905</td>
+								
+								
+								<td  align="center"><b>29</b></td>
+								<td  align="center"><b>1</b></td>	
+								<td  align="center"></td>		
+								<td  align="center">
+									
+									<input type="checkbox" name="reqMid" value="617287" >
+									
+								</td>
+								
+							</tr>			
+				
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617288','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617288','#FFFFFF')">
+								<td >7</td>	
+								<td >T</td>
+								<td >2</td>
+								<td >Physical</td>
+								<td >30</td>
+						
+								<td >4,6,8,10,12</td>
+								<td>Tue</td>
+								<td>03:00 PM - 04:00 PM</td>
+								<td>1.0</td>
+								<td>KB905</td>
+								
+								
+								<td  align="center"><b>20</b></td>
+								<td  align="center"><b>10</b></td>	
+								<td  align="center"></td>		
+								<td  align="center">
+									
+									<input type="checkbox" name="reqMid" value="617288" >
+									
+								</td>
+								
+							</tr>			
+				
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617290','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617290','#FFFFFF')">
+								<td >8</td>	
+								<td >T</td>
+								<td >3</td>
+								<td >Physical</td>
+								<td >30</td>
+						
+								<td >3,5,7,9,11</td>
+								<td>Mon</td>
+								<td>04:00 PM - 05:00 PM</td>
+								<td>1.0</td>
+								<td>KB905</td>
+								
+								
+								<td  align="center"><b>30</b></td>
+								<td  align="center"><b>0</b></td>	
+								<td  align="center"></td>		
+								<td  align="center">
+									
+								</td>
+								
+							</tr>			
+				
+							<tr align="center" onMouseOver="onSelectLine(this,'subRow_617291','#f7f7e7')" onMouseOut="onSelectLine(this,'subRow_617291','#FFFFFF')">
+								<td >9</td>	
+								<td >T</td>
+								<td >4</td>
+								<td >Physical</td>
+								<td >30</td>
+						
+								<td >4,6,8,10,12</td>
+								<td>Mon</td>
+								<td>04:00 PM - 05:00 PM</td>
+								<td>1.0</td>
+								<td>KB905</td>
+								
+								
+								<td  align="center"><b>29</b></td>
+								<td  align="center"><b>1</b></td>	
+								<td  align="center"></td>		
+								<td  align="center">
+									
+									<input type="checkbox" name="reqMid" value="617291" >
+									
+								</td>
+								
+							</tr>			
+		
+			<tr align="center">
+				<td colspan="14"><BR>
+					<input type="button" name="Submit" value="Add" class="button" onClick="onSubmitClick()">
+				</td>
+			</tr>
+			
+		</table>
+	</div>
+
+</form>
+
+
+
+<font color="black" id='notDisplay'>Page Loaded In 15 miliseconds <BR> </font>
+	
+
+<script language="javascript">
+	document.frmParam.reqUnit.focus();
+</script>
+
+
+
+<!-- End Content -->								
+							</td>
+  						</tr>  								 																
+          			</table>            
+				</td>
+          		<td width="10" rowspan="2" ><img src="https://unitreg.utar.edu.my/portal/courseRegStu/images/clear.gif" width="10px"></td>
+        	</tr>        	
+		</table>
+	</td>
+  </tr>
+ 
+<!--<script src="https://unitreg.utar.edu.my/portal/publicFunction.js"></script>-->
+<tr id="notDisplay">
+  <td valign="top" class="footerFont">
+	<HR align="center" width="99%" SIZE=1 noShade>
+	Copyright &copy; 2023, Universiti Tunku Abdul Rahman. All rights reserved. <br>
+	Info Optimized for  Internet Explorer 5.0 and above. Best viewed with 1024 x 768 pixels.<br>
+	Terms of Usage
+	
+	</td>
+
+  </tr>
+</table>
+
+</BODY></HTML>
+ 						
