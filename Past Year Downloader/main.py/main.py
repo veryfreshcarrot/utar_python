@@ -8,8 +8,8 @@ from urllib3.exceptions import InsecureRequestWarning
 # Suppress only the single warning from urllib3 needed.
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 cookies = {
-    "JSESSIONID": "FD416B179C0BB5E7F02D5CA09B1144C8",
-    "sysid": "a6c6287c-fb59-49a3-8615-46e38d0f26fc",
+    "JSESSIONID": "A455F56CF203937C4D250797CEDB9C70",
+    "sysid": "5c7eed4c-e12a-45f5-a6fd-c75331089f4a",
 }
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0",
@@ -27,6 +27,9 @@ s = requests.Session()
 s.headers = headers
 s.cookies.update(cookies)
 s.verify = False
+# To ignore system's preset proxies, to prevent errors
+s.trust_env = False
+s.proxies = None
 
 
 def obtain_download_list():
